@@ -1,6 +1,8 @@
 package tn.enicarthage.TuniHealth.entity;
 
 import java.io.Serializable;
+import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -26,8 +28,10 @@ public class Consultation implements Serializable {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    private Date date;
+	private int h ;
+    private Date date ;
+    private LocalTime T_debut;
+    private LocalTime T_fin ;
 
     @ManyToOne
     @JoinColumn(name = "patient_id")
@@ -40,4 +44,15 @@ public class Consultation implements Serializable {
     private String description;
 
     public Consultation () {}
+
+    public void setTDebut(int h ) {
+    	this.T_debut=this.T_debut.parse(h+":00");
+    }
+    public void setTFin(int h ) {
+    	this.T_fin=this.T_fin.parse(h+":00");
+    }
+    
+
+
+
 }

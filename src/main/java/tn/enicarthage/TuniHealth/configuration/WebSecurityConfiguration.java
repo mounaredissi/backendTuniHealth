@@ -42,7 +42,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         httpSecurity.csrf().disable()
                 .authorizeRequests().antMatchers("/authenticate", "/registerNewUser","/registerNewPatient","/registerNewMedecin","/registerNewCalendrierJour","/registerNewConsultation" , "/getMedecin",
                 		"/FindByMedName/{medName}","/FindBySpecialite/{Specialite}","/findPatientsByIdMed/{id}",
-                		"/findPatientsByMed/{id}").permitAll()
+                		"/findPatientsByMed/{id}","/deleteCons/{id}").permitAll()
                 .antMatchers(HttpMethod.POST,"/authenticate").permitAll()
                 .antMatchers(HttpHeaders.ALLOW).permitAll()
                 .anyRequest().authenticated()
