@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan
-public class JwtYoutubeApplication {
+public class TuniHealth_Ninjas {
 
     public static void main(String[] args) {
-        SpringApplication.run(JwtYoutubeApplication.class, args);
+        SpringApplication.run(TuniHealth_Ninjas.class, args);
     }
 
 }

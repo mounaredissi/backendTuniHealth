@@ -44,7 +44,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 		"/registerNewMedecin","/registerNewCalendrierJour","/registerNewConsultation" , "/getMedecin",
                 		"/FindByMedName/{medName}","/FindBySpecialite/{Specialite}","/findPatientsByIdMed/{id}",
                 		"/findPatientsByMed/{id}","/findAllConsultationsByToday",
-                		"/findAllConsultationsBydate/{id}", "/modifyCons/{id}").permitAll()
+                		"/findAllConsultationsBydate/{id}", "/modifyCons/{id}","/findConsultationByIdPat/{id}").permitAll()
                 .antMatchers(HttpMethod.POST,"/authenticate").permitAll()
                 .antMatchers(HttpHeaders.ALLOW).permitAll()
                 .anyRequest().authenticated()

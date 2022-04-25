@@ -53,8 +53,14 @@ public class ConsultationController {
 	  String id=dtf.format(d.now());
       return new ResponseEntity<List<Consultation>>(consrep.findAllConsultationsByToday(id), HttpStatus.OK);
   }
+  @GetMapping({"/findConsultationByIdPat/{id}"})
+  public ResponseEntity<List<Consultation>> findConsultationByIdPat(@PathVariable String id) {
+      return new ResponseEntity<List<Consultation>>(consrep.findAllConsultationByIdPat(id), HttpStatus.OK);
+
+  }
   @PutMapping("/modifyCons/{id}")
   public int updateUser( @PathVariable("id") Long id,@RequestBody Consultation c) throws ParseException {
+	  int i=0;
 	    Optional<Consultation> cons = consrep.findById(id);
 	    if (cons.isPresent())
 	    {    	
@@ -64,10 +70,9 @@ public class ConsultationController {
 	    consu.setH(c.getH());
 	    consu.setPatient(c.getPatient());
 	    consu.setMedecin(c.getMedecin());
-	    	 return (ConsultationService.registerNewConsultation(consu))	;
+	     i=ConsultationService.registerNewConsultation(consu);
+	   
 	    }
-	    else {
-	        return 0;
-	    }
+return i ;
 	  }
   }

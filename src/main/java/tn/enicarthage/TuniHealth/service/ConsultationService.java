@@ -44,7 +44,7 @@ public class ConsultationService {
 		  C.setTDebut(h);
 		  C.setTFin(h+1);
 		  C.setId(consultation.getId());
-		  C.setDate(consultation.getDate());
+		  C.setDate(d);
 		  C.setPatient(consultation.getPatient());
 		  C.setMedecin(consultation.getMedecin());
 		  C.setDescription(consultation.getDescription());
