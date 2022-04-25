@@ -46,10 +46,18 @@ public class Consultation implements Serializable {
     public Consultation () {}
 
     public void setTDebut(int h ) {
-    	this.T_debut=this.T_debut.parse(h+":00");
+    	if (h==8 || h==9)
+    	this.T_debut=this.T_debut.parse("0"+h+":00");
+    	else
+    		this.T_debut=this.T_debut.parse(h+":00");
+    		
     }
     public void setTFin(int h ) {
-    	this.T_fin=this.T_fin.parse(h+":00");
+    	if (h==8)
+    	this.T_fin=this.T_fin.parse("0"+h+":00");
+    	else
+        	this.T_fin=this.T_fin.parse(h+":00");
+
     }
     
 

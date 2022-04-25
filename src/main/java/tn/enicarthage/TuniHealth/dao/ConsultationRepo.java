@@ -14,6 +14,8 @@ public interface ConsultationRepo extends CrudRepository<Consultation, Long>{
 	  
 	  @Query(value = " (select * from consultations c where c.date=:date)", nativeQuery = true)
 	    List<Consultation> findAllConsultationsBydatess(@Param("date") String date);
-
+	  
+	  @Query(value = " (select * from consultations c where c.date=:date)", nativeQuery = true)
+	    List<Consultation> findAllConsultationsByToday(@Param("date") String date);
 	  
 }

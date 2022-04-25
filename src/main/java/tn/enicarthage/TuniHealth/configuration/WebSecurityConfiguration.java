@@ -40,9 +40,11 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         .authenticationEntryPoint(new JwtAuthenticationEntryPoint());
         httpSecurity.cors();
         httpSecurity.csrf().disable()
-                .authorizeRequests().antMatchers("/authenticate", "/registerNewUser","/registerNewPatient","/registerNewMedecin","/registerNewCalendrierJour","/registerNewConsultation" , "/getMedecin",
+                .authorizeRequests().antMatchers("/authenticate", "/registerNewUser","/registerNewPatient",
+                		"/registerNewMedecin","/registerNewCalendrierJour","/registerNewConsultation" , "/getMedecin",
                 		"/FindByMedName/{medName}","/FindBySpecialite/{Specialite}","/findPatientsByIdMed/{id}",
-                		"/findPatientsByMed/{id}","/deleteCons/{id}").permitAll()
+                		"/findPatientsByMed/{id}","/findAllConsultationsByToday",
+                		"/findAllConsultationsBydate/{id}", "/modifyCons/{id}").permitAll()
                 .antMatchers(HttpMethod.POST,"/authenticate").permitAll()
                 .antMatchers(HttpHeaders.ALLOW).permitAll()
                 .anyRequest().authenticated()
